@@ -1,4 +1,10 @@
-yii2-jplayer
+yii2-jplayer-widget
 ============
 
-http://www.jplayer.org/
+composer.json
+-----
+```json
+"require": {
+        "xj/yii2-jplayer-widget": "*"
+},
+```
