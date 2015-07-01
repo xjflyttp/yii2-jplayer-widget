@@ -11,7 +11,8 @@ use xj\jplayer\JplayerWidget;
  * @author xjflyttp <xjflyttp@gmail.com>
  * @see http://jplayer.org/latest/demo-01/
  */
-class CircleAudioWidget extends JplayerWidget {
+class CircleAudioWidget extends JplayerWidget
+{
 
     /**
      * Tag Class
@@ -35,12 +36,14 @@ class CircleAudioWidget extends JplayerWidget {
      */
     public $skinAsset = 'xj\jplayer\skins\CircleAssets';
 
-    protected function registerAssets() {
+    protected function registerAssets()
+    {
         parent::registerAssets();
         CircleAssets::register($this->view);
     }
 
-    protected function registerScripts() {
+    protected function registerScripts()
+    {
         $jplayerSelector = '#' . $this->getSelectorJplayer();
         $jsonOptions = Json::encode($this->jsOptions);
         $jsonMediaOptions = Json::encode($this->mediaOptions);

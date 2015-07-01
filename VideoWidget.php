@@ -12,7 +12,8 @@ use xj\jplayer\JplayerWidget;
  * @author xjflyttp <xjflyttp@gmail.com>
  * @see http://jplayer.org/latest/demo-01-video/
  */
-class VideoWidget extends JplayerWidget {
+class VideoWidget extends JplayerWidget
+{
 
     /**
      * render view
@@ -28,7 +29,8 @@ class VideoWidget extends JplayerWidget {
     /**
      * register Media Options
      */
-    protected function setOptions() {
+    protected function setOptions()
+    {
         parent::setOptions();
         $this->setMediaOptions();
     }

@@ -10,7 +10,8 @@ use xj\jplayer\JplayerWidget;
  * @author xjflyttp <xjflyttp@gmail.com>
  * @see http://jplayer.org/latest/demo-01/
  */
-class AudioWidget extends JplayerWidget {
+class AudioWidget extends JplayerWidget
+{
 
     /**
      * render view
@@ -26,7 +27,8 @@ class AudioWidget extends JplayerWidget {
     /**
      * register Media Options
      */
-    protected function setOptions() {
+    protected function setOptions()
+    {
         parent::setOptions();
         $this->setMediaOptions();
     }

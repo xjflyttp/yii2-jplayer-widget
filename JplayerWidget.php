@@ -13,7 +13,8 @@ use xj\jplayer\CommonAssets;
  * JPlayer Widget
  * @author xjflyttp <xjflyttp@gmail.com>
  */
-class JplayerWidget extends Widget {
+class JplayerWidget extends Widget
+{
 
     /**
      * render to jquery selector
@@ -101,7 +102,8 @@ class JplayerWidget extends Widget {
     /**
      * Renders the widget.
      */
-    public function run() {
+    public function run()
+    {
         $this->registerAssets();
 
         $this->setOptions();
@@ -118,29 +120,33 @@ class JplayerWidget extends Widget {
     /**
      * register Assets/Css
      */
-    protected function registerAssets() {
+    protected function registerAssets()
+    {
         $this->loadSkinAssets();
 
         $asset = CommonAssets::register($this->view);
         $this->assetPublishDir = $asset->baseUrl;
     }
 
-    protected function loadSkinAssets() {
+    protected function loadSkinAssets()
+    {
         if ($this->skinAsset !== null) {
             $funcName = $this->skinAsset . '::register';
             call_user_func($funcName, $this->view);
         }
     }
 
-    protected function setOptions() {
+    protected function setOptions()
+    {
         $this->jsOptions = ArrayHelper::merge($this->jsOptions, [
-                    'swfPath' => $this->assetPublishDir,
+                    'swfPath' => $this->assetPublishDir . '/js',
         ]);
 
         $this->jsOptions['cssSelectorAncestor'] = '#' . $this->getSelectorAncestor();
     }
 
-    protected function setMediaOptions() {
+    protected function setMediaOptions()
+    {
         if ($this->mediaOptions !== null) {
             $mediaOptions = Json::encode($this->mediaOptions);
             $readyFunction = "function () {\$(this).jPlayer(\"setMedia\", {$mediaOptions});}";
@@ -148,7 +154,8 @@ class JplayerWidget extends Widget {
         }
     }
 
-    protected function setEvent() {
+    protected function setEvent()
+    {
         if ($this->onReady !== null) {
             $this->jsOptions['ready'] = new JsExpression($this->onReady);
         }
@@ -158,7 +165,8 @@ class JplayerWidget extends Widget {
      * get Default Selector JPlayer
      * @return string
      */
-    protected function getDefaultSelectorJplayer() {
+    protected function getDefaultSelectorJplayer()
+    {
         return "jquery_jplayer_" . $this->getId();
     }
 
@@ -166,7 +174,8 @@ class JplayerWidget extends Widget {
      * get Default Selector Ancestor
      * @return string
      */
-    protected function getDefaultSelectorAncestor() {
+    protected function getDefaultSelectorAncestor()
+    {
         return "jp_container_" . $this->getId();
     }
 
@@ -174,7 +183,8 @@ class JplayerWidget extends Widget {
      * get Selector JPlayer
      * @return string
      */
-    public function getSelectorJplayer() {
+    public function getSelectorJplayer()
+    {
         return $this->selectorJplayer === null ? $this->getDefaultSelectorJplayer() : $this->selectorJplayer;
     }
 
@@ -182,17 +192,20 @@ class JplayerWidget extends Widget {
      * get Selector Ancestor
      * @return string
      */
-    public function getSelectorAncestor() {
+    public function getSelectorAncestor()
+    {
         return $this->selectorAncestor === null ? $this->getDefaultSelectorAncestor() : $this->selectorAncestor;
     }
 
-    protected function renderTag() {
+    protected function renderTag()
+    {
         if ($this->tagEnable === true) {
             echo $this->getTagHtml();
         }
     }
 
-    protected function getTagHtml() {
+    protected function getTagHtml()
+    {
         $ancestorId = $this->getSelectorAncestor();
         $jplayerId = $this->getSelectorJplayer();
         return $this->render($this->tagView, [
@@ -203,7 +216,8 @@ class JplayerWidget extends Widget {
         ]);
     }
 
-    protected function registerScripts() {
+    protected function registerScripts()
+    {
         $jplayerSelector = '#' . $this->getSelectorJplayer();
         $jsonOptions = Json::encode($this->jsOptions);
         $script = "\$(\"{$jplayerSelector}\").jPlayer({$jsonOptions});";
