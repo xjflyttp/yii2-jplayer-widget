@@ -10,6 +10,7 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
+        "bower-asset/circleplayer": "*",
         "bower-asset/jplayer": "2.9.*"
     },
     "autoload": {
