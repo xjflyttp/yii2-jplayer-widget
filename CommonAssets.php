@@ -7,13 +7,12 @@ use yii\web\AssetBundle;
 
 class CommonAssets extends AssetBundle
 {
-    public $sourcePath = '@vendor/xj/yii2-jplayer-widget/assets';
+    public $sourcePath = '@bower/jplayer/dist';
     public $basePath = '@webroot/assets';
     public $js = [
-        'js/jquery.jplayer.min.js',
-        'js/jquery.jplayer.inspector.js',
+        'jplayer/jquery.jplayer.js',
+        'add-on/jquery.jplayer.inspector.js',
     ];
-    public $css = [];
     public $depends = ['yii\web\JqueryAsset'];
 
 }

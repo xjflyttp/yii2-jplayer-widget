@@ -139,7 +139,7 @@ class JplayerWidget extends Widget
     protected function setOptions()
     {
         $this->jsOptions = ArrayHelper::merge($this->jsOptions, [
-                    'swfPath' => $this->assetPublishDir . '/js',
+                    'swfPath' => $this->assetPublishDir . '/jplayer',
         ]);
 
         $this->jsOptions['cssSelectorAncestor'] = '#' . $this->getSelectorAncestor();

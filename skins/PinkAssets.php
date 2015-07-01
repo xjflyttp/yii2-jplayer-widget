@@ -8,8 +8,8 @@ use yii\web\AssetBundle;
 class PinkAssets extends AssetBundle
 {
 
-    public $sourcePath = '@vendor/xj/yii2-jplayer-widget/assets';
+    public $sourcePath = '@bower/jplayer/dist';
     public $basePath = '@webroot/assets';
-    public $css = ['skin/pink.flag/jplayer.pink.flag.css'];
+    public $css = ['skin/pink.flag/css/jplayer.pink.flag.css'];
 
 }

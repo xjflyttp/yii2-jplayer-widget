@@ -8,8 +8,8 @@ use yii\web\AssetBundle;
 class BlueAssets extends AssetBundle
 {
 
-    public $sourcePath = '@vendor/xj/yii2-jplayer-widget/assets';
+    public $sourcePath = '@bower/jplayer/dist';
     public $basePath = '@webroot/assets';
-    public $css = ['skin/blue.monday/jplayer.blue.monday.css'];
+    public $css = ['skin/blue.monday/css/jplayer.blue.monday.css'];
 
 }

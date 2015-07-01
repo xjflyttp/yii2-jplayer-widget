@@ -36,12 +36,6 @@ class CircleAudioWidget extends JplayerWidget
      */
     public $skinAsset = 'xj\jplayer\skins\CircleAssets';
 
-    protected function registerAssets()
-    {
-        parent::registerAssets();
-        CircleAssets::register($this->view);
-    }
-
     protected function registerScripts()
     {
         $jplayerSelector = '#' . $this->getSelectorJplayer();
